@@ -1,0 +1,12 @@
+---
+- name: Setup k3s Control Plane
+  hosts: control_plane
+  become: yes
+  roles:
+    - k3s_master
+
+- name: Setup k3s Workers
+  hosts: workers
+  become: yes
+  roles:
+    - k3s_worker
